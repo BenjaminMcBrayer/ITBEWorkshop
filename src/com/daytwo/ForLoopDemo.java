@@ -3,23 +3,20 @@ package com.daytwo;
 import java.util.Random;
 import java.util.Scanner;
 
-public class LoopsDemo {
-
+public class ForLoopDemo {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		Random randNumGenerator = new Random();
-		String userChoice;
+		int userChoice;
 		
-		System.out.println("Would you like to generate a random number? (Y/N)");
-		userChoice = scnr.next();
+		System.out.println("Welcome to the Random Number Generator. How many random numbers would you like to generate?");
+		userChoice = scnr.nextInt();
 		
-		while(userChoice.equalsIgnoreCase("Y")) {
+		for (int i = 0; i < userChoice; i++) {
 			System.out.println(randNumGenerator.nextInt());
-			System.out.println("Play again? (Y/N)");
-			userChoice = scnr.next();
 		}
+		
 		System.out.println("Thanks for playing. Goodbye!");
 		scnr.close();
 	}
-
 }
